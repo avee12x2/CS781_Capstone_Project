@@ -1,0 +1,56 @@
+{
+ "cfg": {
+  "tokenizer": "bpe32768",
+  "n_layer": 12,
+  "n_head": 12,
+  "d_model": 768,
+  "ctx_len": 1024,
+  "dropout": 0.0,
+  "mix": {
+   "supreme_court": 0.8,
+   "tribunals": 0.05,
+   "high_courts": 0.05,
+   "acts": 0.1
+  },
+  "sampling": "epoch",
+  "token_budget": 1000000000,
+  "global_batch_tokens": 131072,
+  "micro_batch": 8,
+  "lr": 0.0006,
+  "min_lr_frac": 0.1,
+  "warmup_frac": 0.02,
+  "schedule": "cosine",
+  "wsd_decay_frac": 0.2,
+  "weight_decay": 0.1,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "grad_clip": 1.0,
+  "seed": 1234,
+  "log_every": 20,
+  "eval_every": 250,
+  "gen_eval_every": 1000,
+  "val_windows": {
+   "supreme_court": 96,
+   "default": 32
+  },
+  "ckpt_every_min": 30,
+  "snapshot_fracs": [
+   0.25,
+   0.5,
+   0.75
+  ],
+  "max_new_tokens": 320,
+  "gen_batch": 48,
+  "run_name": "B_encdec_6x6_SC80_epoch_1000M",
+  "arch": "encdec",
+  "enc_layers": 6,
+  "ffn_hidden": 2048,
+  "rope_base": 10000,
+  "enc_len_min": 256,
+  "enc_len_max": 768,
+  "enc_len_eval": 768
+ },
+ "n_params": 124280832,
+ "total_steps": 7629,
+ "tokens_per_step": 131072
+}

@@ -1,0 +1,123 @@
+{
+ "row": {
+  "run": "B_encdec_6x6_SC80_epoch_1000M",
+  "arch": "encdec[None,None,None,kvNone]",
+  "sampling": "epoch",
+  "params_M": 124.3,
+  "tokens_M": 1000,
+  "ctx": 1024,
+  "mix": "{\"supreme_court\": 0.8, \"tribunals\": 0.05, \"high_courts\": 0.05, \"acts\": 0.1}",
+  "lr": 0.0006,
+  "schedule": "cosine",
+  "val_sc": 2.5192,
+  "valword_sc": 3.0365,
+  "decoding": "greedy_rp1.15_nr4",
+  "local_bertscore": 0.8339,
+  "local_rougeL": 0.1834,
+  "local_bleu4": 0.0461,
+  "train_hours": 6.76,
+  "codabench_bertscore": ""
+ },
+ "decode_sweep": {
+  "greedy": {
+   "n": 400,
+   "rougeL": 0.18032703327386468,
+   "bleu4": 0.028404720825609964,
+   "bertscore_f1": 0.8078391551971436,
+   "rep4": 0.6445632216417462,
+   "gen_seconds": 33.36190724372864,
+   "decoding": {
+    "temperature": 0.0
+   }
+  },
+  "greedy_nr4": {
+   "n": 400,
+   "rougeL": 0.19016598486346403,
+   "bleu4": 0.04339282941285336,
+   "bertscore_f1": 0.8289620280265808,
+   "rep4": 0.0,
+   "gen_seconds": 33.47014617919922,
+   "decoding": {
+    "temperature": 0.0,
+    "no_repeat_ngram": 4
+   }
+  },
+  "greedy_rp1.15_nr4": {
+   "n": 400,
+   "rougeL": 0.18343125106755806,
+   "bleu4": 0.046057483940090675,
+   "bertscore_f1": 0.8338900804519653,
+   "rep4": 0.0,
+   "gen_seconds": 33.31575918197632,
+   "decoding": {
+    "temperature": 0.0,
+    "rep_penalty": 1.15,
+    "no_repeat_ngram": 4
+   }
+  },
+  "t0.7_p0.9_nr4": {
+   "n": 400,
+   "rougeL": 0.19364732032980556,
+   "bleu4": 0.044122876454143235,
+   "bertscore_f1": 0.832001268863678,
+   "rep4": 0.0,
+   "gen_seconds": 34.52082586288452,
+   "decoding": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "no_repeat_ngram": 4
+   }
+  }
+ },
+ "cfg": {
+  "tokenizer": "bpe32768",
+  "n_layer": 12,
+  "n_head": 12,
+  "d_model": 768,
+  "ctx_len": 1024,
+  "dropout": 0.0,
+  "mix": {
+   "supreme_court": 0.8,
+   "tribunals": 0.05,
+   "high_courts": 0.05,
+   "acts": 0.1
+  },
+  "sampling": "epoch",
+  "token_budget": 1000000000,
+  "global_batch_tokens": 131072,
+  "micro_batch": 8,
+  "lr": 0.0006,
+  "min_lr_frac": 0.1,
+  "warmup_frac": 0.02,
+  "schedule": "cosine",
+  "wsd_decay_frac": 0.2,
+  "weight_decay": 0.1,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "grad_clip": 1.0,
+  "seed": 1234,
+  "log_every": 20,
+  "eval_every": 250,
+  "gen_eval_every": 1000,
+  "val_windows": {
+   "supreme_court": 96,
+   "default": 32
+  },
+  "ckpt_every_min": 30,
+  "snapshot_fracs": [
+   0.25,
+   0.5,
+   0.75
+  ],
+  "max_new_tokens": 320,
+  "gen_batch": 48,
+  "run_name": "B_encdec_6x6_SC80_epoch_1000M",
+  "arch": "encdec",
+  "enc_layers": 6,
+  "ffn_hidden": 2048,
+  "rope_base": 10000,
+  "enc_len_min": 256,
+  "enc_len_max": 768,
+  "enc_len_eval": 768
+ }
+}

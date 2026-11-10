@@ -1,0 +1,117 @@
+{
+ "row": {
+  "run": "A0_gpt2_110M_SC80_epoch_1000M",
+  "arch": "gpt2",
+  "sampling": "epoch",
+  "params_M": 111.0,
+  "tokens_M": 1000,
+  "ctx": 1024,
+  "mix": "{\"supreme_court\": 0.9, \"tribunals\": 0.05, \"high_courts\": 0.05, \"acts\": 0.1}",
+  "lr": 0.0006,
+  "schedule": "cosine",
+  "val_sc": 2.2767,
+  "valword_sc": 2.7442,
+  "decoding": "greedy_rp1.15_nr4",
+  "local_bertscore": 0.8421,
+  "local_rougeL": 0.205,
+  "local_bleu4": 0.0773,
+  "train_hours": 8.36,
+  "codabench_bertscore": ""
+ },
+ "decode_sweep": {
+  "greedy": {
+   "n": 400,
+   "rougeL": 0.2056621254988527,
+   "bleu4": 0.06089325679790166,
+   "bertscore_f1": 0.819866955280304,
+   "rep4": 0.5802550233192515,
+   "gen_seconds": 96.90618181228638,
+   "decoding": {
+    "temperature": 0.0
+   }
+  },
+  "greedy_nr4": {
+   "n": 400,
+   "rougeL": 0.21591796875,
+   "bleu4": 0.07846782668457705,
+   "bertscore_f1": 0.8389285802841187,
+   "rep4": 0.0,
+   "gen_seconds": 78.95966100692749,
+   "decoding": {
+    "temperature": 0.0,
+    "no_repeat_ngram": 4
+   }
+  },
+  "greedy_rp1.15_nr4": {
+   "n": 400,
+   "rougeL": 0.2049697554416991,
+   "bleu4": 0.07729409276143229,
+   "bertscore_f1": 0.8420944213867188,
+   "rep4": 0.0,
+   "gen_seconds": 87.9552264213562,
+   "decoding": {
+    "temperature": 0.0,
+    "rep_penalty": 1.15,
+    "no_repeat_ngram": 4
+   }
+  },
+  "t0.7_p0.9_nr4": {
+   "n": 400,
+   "rougeL": 0.20780667280001555,
+   "bleu4": 0.07014012199863791,
+   "bertscore_f1": 0.8395695686340332,
+   "rep4": 2.000000000000002e-05,
+   "gen_seconds": 93.72777366638184,
+   "decoding": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "no_repeat_ngram": 4
+   }
+  }
+ },
+ "cfg": {
+  "tokenizer": "bpe32768",
+  "n_layer": 12,
+  "n_head": 12,
+  "d_model": 768,
+  "ctx_len": 1024,
+  "dropout": 0.0,
+  "mix": {
+   "supreme_court": 0.9,
+   "tribunals": 0.05,
+   "high_courts": 0.05,
+   "acts": 0.1
+  },
+  "sampling": "epoch",
+  "token_budget": 1000000000,
+  "global_batch_tokens": 131072,
+  "micro_batch": 8,
+  "lr": 0.0006,
+  "min_lr_frac": 0.1,
+  "warmup_frac": 0.02,
+  "schedule": "cosine",
+  "wsd_decay_frac": 0.2,
+  "weight_decay": 0.1,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "grad_clip": 1.0,
+  "seed": 1234,
+  "log_every": 20,
+  "eval_every": 250,
+  "gen_eval_every": 1000,
+  "val_windows": {
+   "supreme_court": 96,
+   "default": 32
+  },
+  "ckpt_every_min": 30,
+  "snapshot_fracs": [
+   0.25,
+   0.5,
+   0.75
+  ],
+  "max_new_tokens": 320,
+  "gen_batch": 48,
+  "run_name": "A0_gpt2_110M_SC80_epoch_1000M",
+  "arch": "gpt2"
+ }
+}
